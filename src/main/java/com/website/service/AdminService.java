@@ -4,7 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.website.model.Admin;
-import com.website.respository.AdminDao;
+import com.website.repository.AdminDao;
+
 @Service
 public class AdminService {
 
