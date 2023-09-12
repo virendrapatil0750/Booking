@@ -29,4 +29,20 @@ public class UserController {
 		String reponse = userService.saveUser(name, password,email,dob,image,city);
 		return ResponseEntity.ok(reponse);
 	}
+	
+	@PostMapping("/getUser")
+	public ResponseEntity<String> getUser(	@RequestParam("email") String email,
+											@RequestParam("password") String password){
+		String response = userService.getUser(email, password);
+		return ResponseEntity.ok(response);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

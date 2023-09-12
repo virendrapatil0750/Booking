@@ -1,6 +1,7 @@
 package com.website.service;
 
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.sql.Date;
 import java.util.Base64;
 
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.website.exception.UserAlreadyExists;
+import com.website.exception.UserNotFound;
+import com.website.exception.UserPasswordisWrong;
 import com.website.model.User;
 import com.website.repository.UserDao;
 
@@ -43,5 +46,32 @@ public class UserService {
 				return u.getName() + " has been stored in data";
 		}
 	}
+
+	public String getUser(String email, String password) {
+		if(userDao.findByEmail(email).isPresent()) {
+			User u = userDao.findByEmail(email).get();
+			if(password.equals(u.getPassword())) {
+				return u.getName()+" Welcome";
+			}
+			else {
+				throw new UserPasswordisWrong("Please enter correct password");
+			}
+		}
+		else {
+			throw new UserNotFound("Email entered is not present");
+		}
+	}
 	
+	
+	public String randomPassword() {
+		int i = 12;
+		SecureRandom random = new SecureRandom();
+		StringBuilder password = new StringBuilder();
+		String allCharacter = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
+		for (int j = 1; j <= i; j++) {
+			int randomInt = random.nextInt(allCharacter.length());
+			password.append(allCharacter.charAt(randomInt));
+		}
+		return password.toString();
+	}
 }
