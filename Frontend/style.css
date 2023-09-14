@@ -13,13 +13,23 @@
     padding-top: 05%;
     border-radius: 15%;
 }
+.hidden{
+    display: none;
+}
 .container_login{
     width: 40%;
     padding-top: 5%;
     height: 60vh;
     padding-right: auto;
+
 }
-.loginButton{
+.h1userlogin, .h1adminlogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.loginButton, .SubmitButton{
     align-items: center;
     display: flex;
     justify-content: center;
@@ -100,4 +110,15 @@ input:checked + .slider::before{
     align-content: stretch;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.newUserRegisteration{
+    height: 100vh;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 10%;
+    padding-right: auto;
+    border-style: solid;
 }
