@@ -112,13 +112,17 @@ input:checked + .slider::before{
     align-items: center;
 }
 
-.newUserRegisteration{
-    height: 100vh;
+.dpnewUserRegisteration{
+    height:auto;
     padding-top: 50px;
     display: flex;
     flex-direction: column;
     width: 80%;
     margin-left: 10%;
     padding-right: auto;
-    border-style: solid;
+}
+
+.newUserRegisteration{
+    margin-left: 10%;
+    margin-right: 10%;
 }
