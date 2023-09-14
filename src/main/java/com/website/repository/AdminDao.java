@@ -9,4 +9,5 @@ import com.website.model.Admin;
 @Repository
 public interface AdminDao extends JpaRepository<Admin, Long>{
 
+	public Admin findByusernameAndPassword(String username, String password);
 }
