@@ -9,6 +9,6 @@ import com.website.model.Movie;
 
 @Repository
 public interface MovieDao extends JpaRepository<Movie, Long>{
-	Optional<Movie> findByName(String name);
+	Optional<Movie> findByMovieName(String movieName);
 	Optional<Movie> findByGenre(String genre);
 }
