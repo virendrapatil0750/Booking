@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
@@ -24,8 +25,14 @@ public class Theater {
 	private Long theaterId;
 	private String name;
 	private String location;
+	@ManyToOne
+	private City city;
+
+	@Override
+	public String toString() {
+		return "Theater [theaterId=" + theaterId + ", name=" + name + ", location=" + location + ", city=" + city + "]";
+	}
 	
-	@OneToMany(mappedBy = "theater")
-	private List<Movie> movies;
+	
 	
 }

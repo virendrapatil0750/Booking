@@ -21,13 +21,12 @@ public class CityController {
 	@Autowired
 	CityService cityService;
 
-	@PostMapping
+	@PostMapping("/saveCity")
 	public City saveCity(@RequestBody City city) {
 		return cityService.saveCity(city);
 	}
 
-	@GetMapping
-
+	@GetMapping("/findCity")
 	public City findByCity(@RequestParam("city") String cityName) {
 		return cityService.findByCity(cityName);
 	}
