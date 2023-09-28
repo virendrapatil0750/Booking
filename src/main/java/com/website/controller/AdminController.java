@@ -1,5 +1,7 @@
 package com.website.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -46,4 +48,11 @@ public final class AdminController {
 		Admin admin1 = adminService.updateAdmin(admin);
 		return ResponseEntity.ok(admin1);
 	}
+	
+	@GetMapping
+	public ResponseEntity<List<Admin>> getAllAdmins(){
+		List<Admin> adminList = adminService.getAllAdmins();
+		return ResponseEntity.ok(adminList);			
+	}
+	
 }

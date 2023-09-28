@@ -5,10 +5,9 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.website.model.Movie;
-
+import com.website.model.City;
 @Repository
-public interface MovieDao extends JpaRepository<Movie, Long>{
-	Optional<Movie> findByName(String name);
-	Optional<Movie> findByGenre(String genre);
+public interface CityDao extends JpaRepository<City,Long> {
+
+	public Optional<City> findByCityName(String cityName);
 }
